@@ -52,19 +52,19 @@ interests:
   - Programing
 
 education:
-  - area: Sociology
-    institution: Moscow State University 
-    date_start: 01.09.2020
-    date_end: 01.09.2024
+  - area: Mathematics and Informactics 
+    institution: RUDN 
+    date_start: 01.09.2024
+    date_end: 01.09.2026
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: Sociology
+    institution: Moscow State University
+    date_start: 01.09.2020
+    date_end: 01.09.2024
     summary: |
       GPA: 3.8/4.0
 
