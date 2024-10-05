@@ -54,8 +54,8 @@ interests:
 education:
   - area: Mathematics and Informactics 
     institution: RUDN 
-    date_start: 01.09.2024
-    date_end: 01.09.2026
+    date_start: 2024-09-01
+    date_end: 2026-09-01
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
@@ -63,8 +63,8 @@ education:
       url: 'https://example.com'
   - area: Sociology
     institution: Moscow State University
-    date_start: 01.09.2020
-    date_end: 01.09.2024
+    date_start: 2020-09-01
+    date_end: 2024-09-01
     summary: |
       GPA: 3.8/4.0
 
