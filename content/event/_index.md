@@ -1,5 +1,5 @@
 ---
-title: Recent & Upcoming Talks
+title: Освоение нового языка программирования
 cms_exclude: true
 #url: talk
 
