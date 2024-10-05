@@ -57,7 +57,7 @@ sections:
       columns: 2
   - block: collection
     content:
-      title: Recent Publications
+      title: Последние публикации
       text: ""
       filters:
         folders:
