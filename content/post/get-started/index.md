@@ -1,6 +1,6 @@
 ---
-title: 🎉 Easily create your own simple yet highly customizable blog
-summary: Take full control of your personal brand and privacy by migrating away from the big tech platforms!
+title: 🎉 Решены проблемы с запуском hugo website
+summary: Переход на windows с linux, реализация проекта в vscode
 date: 2023-10-27
 
 # Featured image
