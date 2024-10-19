@@ -1,209 +1,189 @@
 ---
-## Front matter
-title: "Отчет по Лабораторной работе №2 по предмету Математические основы зищаты информации и информационной безопасности"
-author: "Лобов Михаил Сергеевич"
-
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
-
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
-
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-    - spelling=modern
-    - babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: IBM Plex Serif
-romanfont: IBM Plex Serif
-sansfont: IBM Plex Sans
-monofont: IBM Plex Mono
-mathfont: STIX Two Math
-mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
-monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
-mathfontoptions:
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+title: ✅ Markdown - the best markup language
+summary: This is a short post about markdown
+date: 2024-10-19
+authors:
+  - admin
+tags:
+  - Hugo Blox
+  - Markdown
+image:
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 ---
 
-# Цель работы
+```markdown
+# 🚀 Markdown: Your New Favorite Language for Writing on the Web!
 
-Изучить шифры перестановки
+### What if I told you that there's a magical language, *so simple yet so powerful*, that it turns your plain text into beautifully formatted web content? Welcome to **Markdown**—the best way to write, format, and publish on the internet, and the secret weapon of content creators worldwide! 💡
 
-# Задание
+## ✨ Why Markdown? Because Simplicity is Genius
 
-Программно реализовать на языке Julia шифры:
-1. Маршрутное шифрование
-2. Шифрование с помощью решеток
-3. Таблица Вижнера
+Let’s get real: **HTML** is awesome, but it’s also a little... much? 😅 If you’ve ever tangled with `<div>`, fought with `<p>`, or just wanted to scream at a rogue closing tag, Markdown is here to save the day. It’s simple, human-readable, and transforms your writing into HTML with minimal effort. 🧙‍♂️✨
 
-# Теоретическое введение
+Markdown keeps things clean and **concise**. You focus on your content, and Markdown will make sure it shines without all the heavy lifting. Sounds like a dream, right?
 
-## Маршрутное шифрование
+## 🛠️ Basic Formatting in Markdown
 
-Открытый текст разбивается на блоки равной длины, состоящие из числа символов, равного произведению m𝑛. Если последний блок получится меньше остальных, то в него следует дописать требуемое количество произвольных символов. Составляется таблица размерности m𝑛. Блоки вписываются построчно в таблицу. Криптограмма получается выписыванием букв из таблицы в соответствии с некоторым маршрутом. Ключом такой криптограммы является маршрут и числа m и 𝑛. Обычно буквы выписывают по столбцам, которые упорядочивают согласно паролю: внизу таблицы приписывается слово из 
-n неповторяющихся букв и столбцы нумеруются по алфавитному порядку букв пароля.
+Markdown isn’t just easy—it’s ridiculously intuitive. Let’s dive into some key tricks, so you can start flexing your Markdown muscles 💪:
 
-## Шифрование с помощью решеток
+### 1. Headers: Start Big, Go Small
+You’re in charge of the hierarchy! Headers are created with the `#` symbol. The more hashes, the smaller the header.
 
-Суть этого способа заключается в следующем. Выбирается натуральное число $k > 1$, строится квадрат размерности $k \times k$ и построчно заполняется числами $1, 2, \dots, k^2$. В качестве примера рассмотрим квадрат размерности $k = 2$.
+```markdown
+# This is an H1 (Main Header)
+## This is an H2 (Subheader)
+### This is an H3 (Sub-Subheader)
+#### Keep going down with more hashes...
+```
 
-$$
-\begin{matrix}
-1 & 2 \\
-3 & 4
-\end{matrix}
-$$
+And look how they transform:
+# This is an H1
+## This is an H2
+### This is an H3
+#### Keep going down with more hashes...
 
-Повернем его по часовой стрелке на $90^\circ$ и присоединим к исходному квадрату справа.
+### 2. Text Styling: Italics, Bold, and Strikethrough
 
-$$
-\begin{matrix}
-1 & 2 & 3 & 1 \\
-3 & 4 & 4 & 2
-\end{matrix}
-$$
+Whether you need to *emphasize* something, **boldly** declare your message, or ~~cross out your mistakes~~, Markdown has your back.
 
-Проделаем еще дважды такую процедуру и пришьем получившиеся квадраты снизу. Получился большой квадрат размерности $2k$.
+- Use one asterisk or underscore for *italics*.
+- Use two for **bold**.
+- Use `~~` for ~~strikethrough~~.
 
-$$
-\begin{matrix}
-1 & 2 & 3 & 1 \\
-3 & 4 & 4 & 2 \\
-2 & 4 & 3 & 4 \\
-1 & 3 & 2 & 1
-\end{matrix}
-$$
+```markdown
+*italic* or _italic_
+**bold** or __bold__
+~~strikethrough~~
+```
 
-Далее из большого квадрата вырезаются клетки, содержащие числа от 1 до $k^2$. В каждой клетке должно быть только одно число. Получается своего рода решето. Шифрование осуществляется следующим образом. Решето накладывается на чистый квадрат $2k \times 2k$ и в прорези вписываются буквы исходного текста по порядку их следования. Когда заполнятся все прорези, решето поворачивается на $90^\circ$ и вписывание букв продолжается. После третьего поворота все клетки большого квадрата окажутся заполненными. Подобрав подходящий пароль (число букв пароля должно равняться $k^2$ и они не должны повторяться), выпишем буквы по столбцам. Очередность столбцов определяется алфавитным порядком букв пароля.
+### 3. Lists: Bulleted or Numbered, It's Your Call
 
-**Пример.** Исходный текст — *договор подписали*; пароль — *шифр*. С применением вышеуказанной решетки за пять шагов получаем следующую криптограмму.
+Markdown makes lists super easy, and we all love a good list, don’t we? 📝
 
-$$
-\begin{matrix}
-д & о & д & о \\
-г & о & а & в \\
-о & р & п & и \\
-п & о & д & п \\
-с & а & л & и \\
-и & ш & ф & р
-\end{matrix}
-$$
+- For **bulleted lists**, just use asterisks `*`, pluses `+`, or dashes `-`.
+- For **numbered lists**, simply write the numbers followed by a period.
 
-Получившаяся криптограмма: `ОВОРДЛГПАПИОСДОИ`. Важно отметить, что число клеток подбирается в соответствии с количеством букв в исходном тексте. В идеальном случае $k^2 = n$. Если такого равенства достичь невозможно, можно либо дописать произвольную букву к последнему слову открытого текста, либо убрать её.""
+```markdown
+* Item 1
+* Item 2
+  * Sub-item 2.1
+  * Sub-item 2.2
 
-## Таблица Виженера
+1. Step one
+2. Step two
+   1. Sub-step 2.1
+   2. Sub-step 2.2
+```
 
-В 1585 году французский криптограф Блез Виженер опубликовал свой метод шифрования в «Трактате о шифрах». Шифр считался нераскрываемым до 1863 года, когда австриец Фридрих Казиски взломал его.
+How they appear:
 
-Открытый текст разбивается на блоки длины $n$. Ключ представляет собой последовательность из $n$ натуральных чисел: $a_1, a_2, \dots, a_n$. Далее в каждом блоке первая буква циклически сдвигается вправо по алфавиту на $a_1$ позиций, вторая буква — на $a_2$ позиций, последняя — на $a_n$ позиций. Для лучшего запоминания в качестве ключа можно взять осмысленное слово, а алфавитные номера входящих в него букв использовать для осуществления сдвигов. Рассмотрим еще одну схему построения шифра Виженера.
+* Item 1
+* Item 2
+  * Sub-item 2.1
+  * Sub-item 2.2
 
-В нижеприведенной таблице в строчках записаны буквы русского алфавита. При переходе от одной строки к другой происходит циклический сдвиг на одну позицию. Исходный текст: *криптография серьезная наука*; пароль — *математика*. Пароль записывается с повторениями над буквами сообщения.
+1. Step one
+2. Step two
+   1. Sub-step 2.1
+   2. Sub-step 2.2
 
-| м | а | т | е | м | а | т | и | к | а | м | а | т | е | м | а | т | и | к | а | м | а | т | е | м | а |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| к | р | и | п | т | о | г | р | а | ф | и | я | с | е | р | ь | е | з | н | а | я | н | а | у | к | а |
+### 4. Links and Images: The Web at Your Fingertips 🌐
 
-АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ 
+Markdown makes it *so* easy to add links and images. Want to link something? Easy-peasy:
 
-БВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБ 
+```markdown
+[Click here to visit my awesome website!](https://www.yourwebsite.com)
+```
 
-ВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВ 
+Want to add a cool image? Markdown’s got you:
 
-ГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГ 
+```markdown
+![A descriptive image caption](https://www.example.com/image.png)
+```
 
-ДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГД 
+### 5. Code Blocks and Inline Code
 
-ЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕ 
+For all you coding wizards 🧙‍♂️, Markdown is a natural fit for sharing code snippets. Use backticks for `inline code` or triple backticks for blocks of code.
 
-ЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖ 
+```markdown
+Here’s some inline code: `print("Hello, Markdown!")`.
 
-ЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗ 
+And here’s a block of Python code:
 
-ИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИ 
+```python
+def greet():
+    print("Hello, Markdown!")
+greet()
+```
+```
 
-ЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙ 
+### 6. Blockquotes: Get Quoting
 
-КЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙК 
+Feel like quoting some wisdom? Markdown’s blockquote feature turns ordinary text into something profound.
 
-ЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙКЛ 
+```markdown
+> “Markdown is amazing.” — You, after reading this post
+```
 
-МНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙКЛМ 
+> “Markdown is amazing.” — You, after reading this post
 
-НОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙКЛМН 
+### 7. Tables: Organize Like a Pro 📊
 
-ОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙКЛМНО 
+Organizing data? Markdown tables make it ridiculously simple:
 
-ПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙКЛМНОП
+```markdown
+| Feature        | Description                  |
+|----------------|------------------------------|
+| **Ease**       | Markdown is incredibly easy  |
+| **Speed**      | Write faster, format better  |
+| **Flexibility**| Use anywhere, for anything   |
+```
 
+| Feature        | Description                  |
+|----------------|------------------------------|
+| **Ease**       | Markdown is incredibly easy  |
+| **Speed**      | Write faster, format better  |
+| **Flexibility**| Use anywhere, for anything   |
 
-В горизонтальном алфавите находим букву «к», а в вертикальном — букву «м». На пересечении столбца и строки в таблице расположена буква «ц». Далее переходим к буквам «р» и «а» соответственно. В итоге получается следующая криптограмма:
+### 8. Horizontal Rule: Break It Up
 
-`ЦРЬФЯЮХШКФФЯДКЭЬЧПЧАЛНТЩЦА`.
+Need a visual break in your content? Markdown gives you the easiest way to add a horizontal rule:
 
+```markdown
+---
+```
 
-# Выполнение лабораторной работы
+---
 
-Написаны программы на языке Julia.
+## 🎨 Markdown + HTML = The Ultimate Combo
 
-![Маршрутное шифрование](pictures/Viettpic1.png){#fig:001 width=70%}
-![Маршрутное шифрование](pictures/Viettpic2.png){#fig:001 width=70%}
-![Маршрутное шифрование](pictures/Viettpic3.png){#fig:001 width=70%}
-![Шифрование с помощью решеток](pictures/Fleissner1.png){#fig:001 width=70%}
-![Шифрование с помощью решеток](pictures/Fleissner2.png){#fig:001 width=70%}
-![Шифрование с помощью решеток](pictures/Fleissner3.png){#fig:001 width=70%}
-![Шифрование с помощью решеток](pictures/Fleissner4.png){#fig:001 width=70%}
-![Таблица Винженера](pictures/Vinger1.png){#fig:001 width=70%}
-![Таблица Винженера](pictures/Vinger2.png){#fig:001 width=70%}
-![Таблица Винженера](pictures/Vinger3.png){#fig:001 width=70%}
+Okay, here’s a secret sauce tip: you can mix in **HTML** with Markdown if you need more advanced formatting! Yup, the two play nicely together. Want to center text or add a custom styled div? Go ahead and sneak in a bit of HTML code.
 
+```markdown
+<div style="text-align:center;">
+**Markdown meets HTML. Perfection.**
+</div>
+```
 
-# Выводы
+<div style="text-align:center;">
+**Markdown meets HTML. Perfection.**
+</div>
 
-По итогу проделанной работы были написаны 3 программы для каждого алгоритма шифрования. Программы успешно работают, без ошибок и могут принимать на вход различные данные, т.е. не привязаны к конкретным паролям или сообщениям. 
+## 🎉 Final Thoughts: Why You Should Love Markdown
 
-# Список литературы{.unnumbered}
+If you haven’t fallen in love with Markdown by now, let me wrap this up for you. It’s:
 
-::: {#[Лабораторная_работа_2](https://esystem.rudn.ru/mod/folder/view.php?id=1150970)}
-:::
+- **Effortless**: No more fighting with clunky editors or bloated formatting tools.
+- **Flexible**: Whether you’re writing blog posts, README files, or technical docs, Markdown’s your best friend.
+- **Portable**: It’s supported practically everywhere—from GitHub to web platforms, to note-taking apps!
+
+Markdown is a language you didn’t know you needed until now. And trust me, once you start using it, there’s no going back. 😉 So go ahead, flex your Markdown skills and start writing beautifully simple content that works everywhere. 
+
+Markdown: *The future of writing on the web, today.*
+
+---
+
+Got any cool Markdown tips or tricks? Share them in the comments below! 🎤👇
+```
+
+Enjoy crafting your Markdown post!
