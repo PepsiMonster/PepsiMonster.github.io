@@ -32,7 +32,7 @@ sections:
           parallax: false
   - block: markdown
     content:
-      title: '📚 Пост Прошедшей Недели'
+      title: '📚 My website'
       subtitle: ''
       text: |-
         Изучение шифрования перестановкой на примере:
@@ -84,7 +84,7 @@ sections:
       # Page type to display. E.g. post, talk, publication...
       page_type: post
       # Choose how many pages you would like to display (0 = all pages)
-      count: 5
+      count: 8
       # Filter on criteria
       filters:
         author: ""

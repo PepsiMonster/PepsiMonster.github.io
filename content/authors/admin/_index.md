@@ -33,10 +33,29 @@ profiles:
   - icon: at-symbol
     url: 'kotofeykotofeiv@gmail.com'
     label: E-mail Me
-  #- icon: brands/x
-   # url: https://twitter.com/GetResearchDev
-  #- icon: brands/instagram
-   # url: https://www.instagram.com/
+  - icon: brands/book-open
+    url: https://elibrary.ru/pass_request.asp
+    label: eLibrary
+  - icon: media/icons/google-scholar.svg
+    url: https://scholar.google.com/schhp?hl=ru
+    label: Google Scholar
+  - icon: orcid
+    url: https://orcid.org/
+    label: ORCID
+  - icon: mendeley
+    url: https://www.mendeley.com/
+    label: Mendeley
+  - icon: researchgate
+    url: https://www.researchgate.net/
+    label: ResearchGate
+  - icon: academia
+    url: https://www.academia.edu/
+    label: Academia.edu
+  - icon: arxiv
+    url: https://arxiv.org/
+    label: arXiv
+#- icon: brands/orcid
+   # url: https://orcid.org/my-orcid?orcid=0009-0004-0894-2585&justRegistered=true
   - icon: brands/github
     url: https://github.com/PepsiMonster
   #- icon: brands/linkedin
