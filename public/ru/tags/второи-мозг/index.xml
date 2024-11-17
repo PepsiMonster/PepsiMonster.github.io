@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Второй Мозг | Hugo Academic CV Theme</title>
+    <link>http://localhost:1313/ru/tags/%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B8-%D0%BC%D0%BE%D0%B7%D0%B3/</link>
+      <atom:link href="http://localhost:1313/ru/tags/%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B8-%D0%BC%D0%BE%D0%B7%D0%B3/index.xml" rel="self" type="application/rss+xml" />
+    <description>Второй Мозг</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>ru</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu7729264130191091259.png</url>
+      <title>Второй Мозг</title>
+      <link>http://localhost:1313/ru/tags/%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B8-%D0%BC%D0%BE%D0%B7%D0%B3/</link>
+    </image>
+    
+    <item>
+      <title>🧠 Улучшите мышление с помощью второго мозга</title>
+      <link>http://localhost:1313/ru/post/second-brain/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ru/post/second-brain/</guid>
+      <description>&lt;p&gt;Создайте личную базу знаний и делитесь ею с коллегами.&lt;/p&gt;
+&lt;p&gt;Веб-фреймворк Hugo Blox предоставляет одни из самых гибких возможностей для ведения заметок.&lt;/p&gt;
+&lt;p&gt;Создайте мощную базу знаний, которая работает на основе локальной папки с простыми текстовыми файлами в формате Markdown.&lt;/p&gt;
+&lt;p&gt;Используйте её как свой второй мозг, открыто делясь знаниями через ваш сайт, либо в частном репозитории GitHub с защищенным паролем доступом только для себя.&lt;/p&gt;
+&lt;h2 id=&#34;карты-мыслей&#34;&gt;Карты мыслей&lt;/h2&gt;
+&lt;p&gt;Hugo Blox поддерживает расширение Markdown для создания карт мыслей.&lt;/p&gt;
+&lt;p&gt;С этим открытым форматом вы даже сможете редактировать карты мыслей в других популярных инструментах, таких как Obsidian.&lt;/p&gt;
+&lt;p&gt;Просто вставьте блок кода Markdown с пометкой &lt;code&gt;markmap&lt;/code&gt; и при необходимости задайте высоту карты, как в приведенном ниже примере.&lt;/p&gt;
+&lt;p&gt;Карты мыслей можно создавать, записывая элементы в виде списка Markdown внутри блока &lt;code&gt;markmap&lt;/code&gt;, делая отступы для создания нужного уровня вложенности:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;
+&lt;code&gt;
+```markmap {height=&#34;200px&#34;}
+- Hugo Modules
+  - Hugo Blox
+  - blox-plugins-netlify
+  - blox-plugins-netlify-cms
+  - blox-plugins-reveal
+```
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Отображается как:&lt;/p&gt;
+&lt;div class=&#34;markmap&#34; style=&#34;height: 200px;&#34;&gt;
+
+&lt;pre&gt;- Hugo Modules
+  - Hugo Blox
+  - blox-plugins-netlify
+  - blox-plugins-netlify-cms
+  - blox-plugins-reveal&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;А вот более сложная карта мыслей с форматированием, блоками кода и математическими формулами:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;
+&lt;code&gt;
+```markmap
+- Карты мыслей
+  - Ссылки
+    - [Документация Hugo Blox](https://docs.hugoblox.com/)
+    - [Сообщество Discord](https://discord.gg/z8wNYzb)
+    - [GitHub](https://github.com/HugoBlox/hugo-blox-builder)
+  - Возможности
+    - Форматирование Markdown
+    - **встроенные** ~~стили~~ *текста*
+    - многострочный
+      текст
+    - `встроенный код`
+    -
+      ```js
+      console.log(&#39;привет&#39;);
+      console.log(&#39;блок кода&#39;);
+      ```
+    - Математика: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+```
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Отображается как:&lt;/p&gt;
+&lt;div class=&#34;markmap&#34; style=&#34;height: 500px;&#34;&gt;
+
+&lt;pre&gt;- Карты мыслей
+  - Ссылки
+    - [Документация Hugo Blox](https://docs.hugoblox.com/)
+    - [Сообщество Discord](https://discord.gg/z8wNYzb)
+    - [GitHub](https://github.com/HugoBlox/hugo-blox-builder)
+  - Возможности
+    - Форматирование Markdown
+    - **встроенные** ~~стили~~ *текста*
+    - многострочный
+      текст
+    - `встроенный код`
+    -
+      ```js
+      console.log(&#39;привет&#39;);
+      console.log(&#39;блок кода&#39;);
+      ```
+    - Математика: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;подсветка-текста&#34;&gt;Подсветка текста&lt;/h2&gt;
+&lt;p&gt;&lt;mark&gt;Выделяйте&lt;/mark&gt; важный текст с помощью &lt;code&gt;mark&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Выделенный текст&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;выноски&#34;&gt;Выноски&lt;/h2&gt;
+&lt;p&gt;Используйте 
+ (также называемые &lt;em&gt;заметками&lt;/em&gt;, &lt;em&gt;подсказками&lt;/em&gt; или &lt;em&gt;предупреждениями&lt;/em&gt;) для привлечения внимания к заметкам, советам и предупреждениям.&lt;/p&gt;
+&lt;p&gt;Обрамите абзац с помощью &lt;code&gt;{{% callout note %}} ... {{% /callout %}}&lt;/code&gt;, и он отобразится как заметка.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{% callout note %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Заметка в Markdown полезна для отображения уведомлений, подсказок или определений для ваших читателей.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{% /callout %}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Отображается как:&lt;/p&gt;
+&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
+&lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;
+  &lt;svg height=&#34;24&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z&#34;/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+  &lt;span class=&#34;dark:text-neutral-300&#34;&gt;Заметка в Markdown полезна для отображения уведомлений, подсказок или определений для ваших читателей.&lt;/span&gt;
+&lt;/div&gt;
+&lt;p&gt;Или используйте тип выноски &lt;code&gt;warning&lt;/code&gt;, чтобы читатели не пропустили важные детали:&lt;/p&gt;
+&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-yellow-100 dark:bg-yellow-900&#34;&gt;
+&lt;span class=&#34;pr-3 pt-1 text-red-400&#34;&gt;
+  &lt;svg height=&#34;24&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0zM12 15.75h.007v.008H12z&#34;/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+  &lt;span class=&#34;dark:text-neutral-300&#34;&gt;Заметка в Markdown полезна для отображения уведомлений, подсказок или определений для ваших читателей.&lt;/span&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;эта-страница-оказалась-полезной-поделитесь-ею-&#34;&gt;Эта страница оказалась полезной? Поделитесь ею 🙌&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

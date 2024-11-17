@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Радиосигналы | Hugo Academic CV Theme</title>
+    <link>http://localhost:1313/ru/tags/%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB%D1%8B/</link>
+      <atom:link href="http://localhost:1313/ru/tags/%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB%D1%8B/index.xml" rel="self" type="application/rss+xml" />
+    <description>Радиосигналы</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>ru</language><lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu7729264130191091259.png</url>
+      <title>Радиосигналы</title>
+      <link>http://localhost:1313/ru/tags/%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB%D1%8B/</link>
+    </image>
+    
+    <item>
+      <title>✅ Пост по событиям пятой недели</title>
+      <link>http://localhost:1313/ru/post/week5post/post5/</link>
+      <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ru/post/week5post/post5/</guid>
+      <description>&lt;p&gt;На этой неделе я завершил несколько интересных проектов и задач, которые помогли расширить мои знания в области моделирования, радиосигналов и веб-разработки. Вот подробности.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-завершение-группового-проекта-моделирование-эпидемии-в-изолированной-популяции&#34;&gt;1. Завершение группового проекта: Моделирование эпидемии в изолированной популяции&lt;/h2&gt;
+&lt;h3 id=&#34;постановка-задачи&#34;&gt;Постановка задачи&lt;/h3&gt;
+&lt;p&gt;Мы смоделировали эпидемию чумы в изолированном городе &amp;ldquo;Амбрелла Сити&amp;rdquo; с населением 7777 человек. В начальный момент:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Инфицировано: &lt;strong&gt;1500 человек&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Выздоровевших: &lt;strong&gt;0 человек&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Восприимчивых: &lt;strong&gt;6277 человек&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Используя модель SIR, мы разделили популяцию на три группы: восприимчивые (S), инфицированные (I) и выздоровевшие (R). Для моделирования критических условий распространения эпидемии был учтён порог инфицированных, после которого происходит полная изоляция.&lt;/p&gt;
+&lt;h3 id=&#34;математическая-основа&#34;&gt;Математическая основа&lt;/h3&gt;
+&lt;p&gt;Модель SIR основывается на следующих дифференциальных уравнениях:&lt;/p&gt;
+$$
+\frac{dS}{dt} = -\alpha S I, \quad
+\frac{dI}{dt} = \alpha S I - \beta I, \quad
+\frac{dR}{dt} = \beta I
+$$&lt;ul&gt;
+&lt;li&gt;\(\alpha = 0.007\) — коэффициент заражения.&lt;/li&gt;
+&lt;li&gt;\(\beta = 0.003\) — коэффициент выздоровления.&lt;/li&gt;
+&lt;li&gt;\(I^* = 1300\) — критический порог.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;реализация&#34;&gt;Реализация&lt;/h3&gt;
+&lt;p&gt;Мы использовали &lt;strong&gt;Julia&lt;/strong&gt; и библиотеку &lt;strong&gt;DifferentialEquations.jl&lt;/strong&gt; для решения модели. Реализация включала два сценария:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Если \(I &gt; I^*\), происходит активное заражение и выздоровление.&lt;/li&gt;
+&lt;li&gt;Если \(I \leq I^*\), все инфицированные изолированы, и происходит только выздоровление.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Код для комбинированной модели выглядел так:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;combo_case!&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;du&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crit_I&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crit_I&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;du&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;du&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;du&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;du&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;du&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;du&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Графики показали, как изменение коэффициентов \(\alpha\) и \(\beta\) влияет на развитие эпидемии. Мы успешно спрогнозировали сценарии, где возможно сдерживание эпидемии.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-лабораторная-работа-моделирование-беспроводных-сетей&#34;&gt;2. Лабораторная работа: моделирование беспроводных сетей&lt;/h2&gt;
+&lt;h3 id=&#34;сценарий-блокировка-прямой-видимости&#34;&gt;Сценарий: блокировка прямой видимости&lt;/h3&gt;
+&lt;p&gt;Я построил имитационную модель для оценки вероятности блокировки линии прямой видимости между двумя точками на плоскости. Основные этапы:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Размещение объектов:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Генерация объектов по точечному пуассоновскому процессу с плотностью \(q\).&lt;/li&gt;
+&lt;li&gt;Распределение объектов внутри квадратной области с длиной стороны \(A\).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Проверка блокировок:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Для каждой реализации проверялось, блокирует ли хотя бы один объект прямую видимость между двумя точками.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Результаты:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Получено 1000 реализаций. Вероятность блокировки рассчитана как доля случаев, где хотя бы один объект заблокировал линию.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Результаты имитации сравнивались с математической моделью. Схожесть показателей подтвердила корректность алгоритма.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-лабораторная-работа-анализ-fspl&#34;&gt;3. Лабораторная работа: анализ FSPL&lt;/h2&gt;
+&lt;h3 id=&#34;распространение-радиосигнала&#34;&gt;Распространение радиосигнала&lt;/h3&gt;
+&lt;p&gt;Мы изучили модель &lt;strong&gt;FSPL (Free Space Path Loss)&lt;/strong&gt;, описывающую потери сигнала в свободном пространстве:&lt;/p&gt;
+$$
+FSPL(d) = \left( \frac{4 \pi d f}{c} \right)^2
+$$&lt;p&gt;Где:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\(d\) — расстояние,&lt;/li&gt;
+&lt;li&gt;\(f\) — частота радиоволны,&lt;/li&gt;
+&lt;li&gt;\(c\) — скорость света.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;преобразование-в-логарифмическую-шкалу&#34;&gt;Преобразование в логарифмическую шкалу&lt;/h4&gt;
+&lt;p&gt;Для удобства анализа мы перевели формулу в децибелы:&lt;/p&gt;
+$$
+FSPL_{dB}(d) = 20 \log_{10} \left( \frac{4 \pi d f}{c} \right)
+$$&lt;h3 id=&#34;графики&#34;&gt;Графики&lt;/h3&gt;
+&lt;p&gt;Я построил графики зависимости потерь сигнала от расстояния для частот:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\(f_1 = 900 \, \text{МГц}\),&lt;/li&gt;
+&lt;li&gt;\(f_2 = 1.9 \, \text{ГГц}\),&lt;/li&gt;
+&lt;li&gt;\(f_3 = 28 \, \text{ГГц}\).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;анализ&#34;&gt;Анализ&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Потери увеличиваются с ростом частоты и расстояния.&lt;/li&gt;
+&lt;li&gt;Логарифмическая шкала упрощает сравнение, позволяя выражать значения в более компактной форме.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-расширение-сайта-hugo&#34;&gt;4. Расширение сайта Hugo&lt;/h2&gt;
+&lt;p&gt;На этой неделе я добавил второй язык на сайт Hugo, обеспечив мультиязычную поддержку. Это позволило охватить более широкую аудиторию. В дополнение я написал пост о языке программирования &lt;strong&gt;Julia&lt;/strong&gt;, в котором рассказал о его особенностях, истории создания и примерах использования.&lt;/p&gt;
+&lt;p&gt;Теперь сайт поддерживает переключение языков, а контент стал доступен для разных категорий пользователей.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;итоги&#34;&gt;Итоги&lt;/h2&gt;
+&lt;p&gt;Эта неделя была насыщенной и продуктивной. Завершение группового проекта по моделированию эпидемий и лабораторные работы в области беспроводных сетей помогли мне лучше понять математическое моделирование и радиотехнические процессы. Расширение сайта Hugo сделало его более функциональным и привлекательным для пользователей. 🚀&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

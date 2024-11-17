@@ -14,9 +14,9 @@
     
     <item>
       <title>✅ Написание отчетов</title>
-      <link>http://localhost:1313/post/reportguide/reportguide/</link>
+      <link>http://localhost:1313/post/reportguide/</link>
       <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/reportguide/reportguide/</guid>
+      <guid>http://localhost:1313/post/reportguide/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# Как написать отчет в Markdown: Полное руководство
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Написание отчетов в формате Markdown — это простой и удобный способ структурировать и оформить документацию. В этом посте я покажу, как правильно оформить отчет, используя &lt;span class=&#34;gs&#34;&gt;**Front matter**&lt;/span&gt; и основные разделы отчета. Пример отчета ниже демонстрирует структуру и форматирование, которые помогут вам создать профессионально оформленный документ.
@@ -931,7 +931,7 @@ The SQL script successfully created a &amp;ldquo;Products&amp;rdquo; table and i
 
 
 
-&lt;div id=&#34;chart-637981254&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-841396752&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   async function fetchChartJSON() {
     console.debug(&#39;Hugo Blox fetching chart JSON...&#39;)
@@ -949,7 +949,7 @@ The SQL script successfully created a &amp;ldquo;Products&amp;rdquo; table and i
 
       fetchChartJSON().then(chart =&gt; {
         console.debug(&#39;Plotting chart...&#39;)
-        window.Plotly.newPlot(&#39;chart-637981254&#39;, chart.data, chart.layout, {responsive: true});
+        window.Plotly.newPlot(&#39;chart-841396752&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
